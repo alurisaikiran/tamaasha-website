@@ -157,14 +157,43 @@ export default function HeroSection() {
           </span>
         </motion.div>
 
+        {/* Stats stripe — compact single row on mobile */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.4, duration: 0.7 }}
+          className="grid grid-cols-4 rounded-xl overflow-hidden border border-[#c9a84c]/15 backdrop-blur-md w-full mx-auto mb-5 sm:mb-10 sm:max-w-none sm:rounded-2xl"
+        >
+          {[
+            { val: "4.9★", label: "Rating" },
+            { val: "200+", label: "Reviews" },
+            { val: "50+",  label: "Cocktails" },
+            { val: "5+",   label: "Years" },
+          ].map((s, i) => (
+            <div
+              key={s.label}
+              className={`px-1 sm:px-7 py-2 sm:py-4 text-center bg-black/30
+                ${i < 3 ? "border-r border-[#c9a84c]/15" : ""}
+              `}
+            >
+              <div
+                className="text-sm sm:text-2xl font-bold text-gold-gradient mb-0"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
+                {s.val}
+              </div>
+              <div className="text-[7px] sm:text-[9px] tracking-[0.2em] text-white/30 uppercase">{s.label}</div>
+            </div>
+          ))}
+        </motion.div>
+
         {/* CTA buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.4, duration: 0.6 }}
-          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-6 sm:mb-16"
+          transition={{ delay: 1.65, duration: 0.6 }}
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"
         >
-          {/* Primary */}
           <motion.button
             whileHover={{ scale: 1.06, boxShadow: "0 0 40px rgba(201,168,76,0.5)" }}
             whileTap={{ scale: 0.97 }}
@@ -174,7 +203,6 @@ export default function HeroSection() {
             Reserve a Table
           </motion.button>
 
-          {/* Secondary */}
           <motion.button
             whileHover={{ scale: 1.04, borderColor: "rgba(201,168,76,0.7)", color: "#c9a84c" }}
             whileTap={{ scale: 0.97 }}
@@ -183,37 +211,6 @@ export default function HeroSection() {
           >
             View Menu
           </motion.button>
-        </motion.div>
-
-        {/* Stats strip */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.65, duration: 0.7 }}
-          className="grid grid-cols-2 sm:grid-cols-4 rounded-2xl overflow-hidden border border-[#c9a84c]/15 backdrop-blur-md w-full max-w-xs sm:max-w-none mx-auto"
-        >
-          {[
-            { val: "4.9★", label: "Google Rating" },
-            { val: "200+", label: "Reviews" },
-            { val: "50+",  label: "Cocktails" },
-            { val: "5+",   label: "Years Open" },
-          ].map((s, i) => (
-            <div
-              key={s.label}
-              className={`px-4 sm:px-7 py-4 text-center bg-black/30
-                ${i % 2 === 0 ? "border-r border-[#c9a84c]/15" : ""}
-                ${i < 2 ? "border-b border-[#c9a84c]/15 sm:border-b-0" : ""}
-              `}
-            >
-              <div
-                className="text-2xl font-bold text-gold-gradient mb-0.5"
-                style={{ fontFamily: "var(--font-playfair)" }}
-              >
-                {s.val}
-              </div>
-              <div className="text-[9px] tracking-[0.3em] text-white/30 uppercase">{s.label}</div>
-            </div>
-          ))}
         </motion.div>
       </div>
 
