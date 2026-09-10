@@ -84,13 +84,13 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="font-bold leading-tight tracking-tight mb-6"
+          className="font-bold leading-snug tracking-tight mb-6"
           style={{ fontFamily: "var(--font-playfair)" }}
         >
-          <span className="block text-white text-5xl md:text-7xl lg:text-8xl mb-3 drop-shadow-2xl">
+          <span className="block text-white text-3xl md:text-5xl lg:text-6xl mb-2 drop-shadow-2xl">
             Where the
           </span>
-          <span className="block shimmer text-5xl md:text-7xl lg:text-[6rem]">
+          <span className="block shimmer text-4xl md:text-6xl lg:text-7xl">
             Night Begins
           </span>
         </motion.h1>
