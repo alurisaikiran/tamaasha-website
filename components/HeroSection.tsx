@@ -84,14 +84,14 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="font-bold leading-snug tracking-tight mb-6"
+          className="font-bold leading-none tracking-tight mb-4"
           style={{ fontFamily: "var(--font-playfair)" }}
         >
-          <span className="block text-white text-3xl md:text-5xl lg:text-6xl mb-2 drop-shadow-2xl">
-            Where the
+          <span className="block text-white text-3xl md:text-5xl lg:text-6xl mb-3 drop-shadow-2xl">
+            Your Night
           </span>
-          <span className="block shimmer text-4xl md:text-6xl lg:text-7xl">
-            Night Begins
+          <span className="block shimmer text-3xl md:text-6xl lg:text-7xl">
+            Starts Here
           </span>
         </motion.h1>
 
@@ -100,7 +100,7 @@ export default function HeroSection() {
           initial={{ scaleX: 0, opacity: 0 }}
           animate={{ scaleX: 1, opacity: 1 }}
           transition={{ delay: 0.9, duration: 0.9 }}
-          className="flex items-center justify-center gap-4 my-8"
+          className="flex items-center justify-center gap-4 my-4 sm:my-8"
         >
           <div className="h-px w-24 bg-gradient-to-r from-transparent to-[#c9a84c]/60" />
           <div className="w-1.5 h-1.5 rotate-45 bg-[#c9a84c]" />
@@ -114,7 +114,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.1, duration: 0.8 }}
-          className="text-lg md:text-xl text-white/55 max-w-xl mx-auto mb-5 leading-relaxed"
+          className="text-sm md:text-xl text-white/55 max-w-xl mx-auto mb-3 sm:mb-5 leading-relaxed"
         >
           An opulent sanctuary of craft cocktails, premium hookah,
           and unforgettable nights in Tucker, Georgia.
@@ -125,7 +125,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.25, duration: 0.6 }}
-          className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-10 text-sm text-white/35"
+          className="flex flex-wrap justify-center gap-x-4 gap-y-1 mb-4 sm:mb-10 text-xs sm:text-sm text-white/35"
         >
           <span className="flex items-center gap-1.5">
             <Clock size={12} className="text-[#c9a84c]/60" />
@@ -148,14 +148,14 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.4, duration: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-6 sm:mb-16"
         >
           {/* Primary */}
           <motion.button
             whileHover={{ scale: 1.06, boxShadow: "0 0 40px rgba(201,168,76,0.5)" }}
             whileTap={{ scale: 0.97 }}
             onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
-            className="relative overflow-hidden btn-shimmer px-10 py-4 bg-[#c9a84c] text-black font-bold tracking-[0.2em] uppercase text-sm rounded-full transition-all duration-300"
+            className="relative overflow-hidden btn-shimmer px-8 py-3 sm:px-10 sm:py-4 bg-[#c9a84c] text-black font-bold tracking-[0.2em] uppercase text-sm rounded-full transition-all duration-300"
           >
             Reserve a Table
           </motion.button>
@@ -165,7 +165,7 @@ export default function HeroSection() {
             whileHover={{ scale: 1.04, borderColor: "rgba(201,168,76,0.7)", color: "#c9a84c" }}
             whileTap={{ scale: 0.97 }}
             onClick={() => document.querySelector("#menu")?.scrollIntoView({ behavior: "smooth" })}
-            className="px-10 py-4 border border-white/20 text-white/70 font-medium tracking-[0.2em] uppercase text-sm rounded-full backdrop-blur-sm transition-all duration-300 hover:bg-white/5"
+            className="px-8 py-3 sm:px-10 sm:py-4 border border-white/20 text-white/70 font-medium tracking-[0.2em] uppercase text-sm rounded-full backdrop-blur-sm transition-all duration-300 hover:bg-white/5"
           >
             View Menu
           </motion.button>
@@ -176,31 +176,30 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.65, duration: 0.7 }}
-          className="w-full max-w-sm sm:max-w-none sm:w-auto overflow-x-auto"
+          className="grid grid-cols-2 sm:grid-cols-4 rounded-2xl overflow-hidden border border-[#c9a84c]/15 backdrop-blur-md w-full max-w-xs sm:max-w-none mx-auto"
         >
-          <div className="inline-flex items-center gap-0 rounded-2xl overflow-hidden border border-[#c9a84c]/15 backdrop-blur-md min-w-max mx-auto">
           {[
             { val: "4.9★", label: "Google Rating" },
             { val: "200+", label: "Reviews" },
             { val: "50+",  label: "Cocktails" },
             { val: "5+",   label: "Years Open" },
-          ].map((s, i, arr) => (
-            <div key={s.label} className="flex items-center">
-              <div className="px-5 sm:px-7 py-4 text-center bg-black/30">
-                <div
-                  className="text-2xl font-bold text-gold-gradient mb-0.5"
-                  style={{ fontFamily: "var(--font-playfair)" }}
-                >
-                  {s.val}
-                </div>
-                <div className="text-[9px] tracking-[0.3em] text-white/30 uppercase">{s.label}</div>
+          ].map((s, i) => (
+            <div
+              key={s.label}
+              className={`px-4 sm:px-7 py-4 text-center bg-black/30
+                ${i % 2 === 0 ? "border-r border-[#c9a84c]/15" : ""}
+                ${i < 2 ? "border-b border-[#c9a84c]/15 sm:border-b-0" : ""}
+              `}
+            >
+              <div
+                className="text-2xl font-bold text-gold-gradient mb-0.5"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
+                {s.val}
               </div>
-              {i < arr.length - 1 && (
-                <div className="w-px h-10 bg-[#c9a84c]/15" />
-              )}
+              <div className="text-[9px] tracking-[0.3em] text-white/30 uppercase">{s.label}</div>
             </div>
           ))}
-          </div>
         </motion.div>
       </div>
 

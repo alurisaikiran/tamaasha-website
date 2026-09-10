@@ -87,7 +87,7 @@ export default function VIPSection() {
             <Sparkles size={12} /> Exclusive Packages <Sparkles size={12} />
           </p>
           <h2
-            className="text-5xl md:text-6xl font-bold text-white mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             VIP <span className="text-gold-gradient">Experience</span>
@@ -164,7 +164,7 @@ export default function VIPSection() {
           transition={{ delay: 0.5, duration: 0.6 }}
           className="mt-12 relative rounded-2xl overflow-hidden"
         >
-          <div className="relative h-64">
+          <div className="relative min-h-[220px] sm:h-64">
             <Image
               src="/images/nightclub-crowd.jpg"
               alt="Birthday celebration"
@@ -172,18 +172,18 @@ export default function VIPSection() {
               className="object-cover object-top"
               sizes="(max-width: 1200px) 100vw, 1200px"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
-            <div className="absolute inset-0 flex flex-col justify-center px-10">
-              <div className="text-4xl mb-3">🎂</div>
-              <h3 className="text-3xl font-bold text-white mb-3" style={{ fontFamily: "var(--font-playfair)" }}>
+            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/60" />
+            <div className="relative z-10 flex flex-col justify-center h-full px-6 sm:px-10 py-8 sm:py-0">
+              <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">🎂</div>
+              <h3 className="text-xl sm:text-3xl font-bold text-white mb-2 sm:mb-3" style={{ fontFamily: "var(--font-playfair)" }}>
                 Celebrating a Birthday?
               </h3>
-              <p className="text-white/50 max-w-lg mb-6 text-sm leading-relaxed">
+              <p className="text-white/50 max-w-lg mb-4 sm:mb-6 text-xs sm:text-sm leading-relaxed">
                 Custom decor, surprise sparkler moments, and a dedicated team to ensure the night is all about you.
               </p>
               <a
                 href="tel:+16786914291"
-                className="inline-flex items-center gap-2 bg-[#c9a84c] text-black px-8 py-3 rounded-full font-semibold tracking-wider text-sm hover:bg-[#e8c97a] transition-all duration-300 w-fit"
+                className="inline-flex items-center gap-2 bg-[#c9a84c] text-black px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold tracking-wider text-xs sm:text-sm hover:bg-[#e8c97a] transition-all duration-300 w-fit"
               >
                 🎉 Plan My Celebration
               </a>

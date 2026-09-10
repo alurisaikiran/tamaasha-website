@@ -117,7 +117,7 @@ export default function MenuSection() {
             <Sparkles size={12} /> Curated Selection <Sparkles size={12} />
           </p>
           <h2
-            className="text-5xl md:text-6xl font-bold text-white mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             Our <span className="text-gold-gradient">Menu</span>
@@ -163,7 +163,7 @@ export default function MenuSection() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               onClick={() => setActive(cat.id)}
-              className={`flex-shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-full text-sm tracking-wider transition-all duration-300 ${
+              className={`flex-shrink-0 flex items-center gap-1.5 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm tracking-wider transition-all duration-300 ${
                 active === cat.id
                   ? "bg-[#c9a84c] text-black font-semibold shadow-lg shadow-[#c9a84c]/20"
                   : "glass-card text-white/60 hover:text-white hover:border-[#c9a84c]/30"

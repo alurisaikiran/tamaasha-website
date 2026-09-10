@@ -36,7 +36,7 @@ export default function AboutSection() {
             <Sparkles size={12} /> Our Story <Sparkles size={12} />
           </p>
           <h2
-            className="text-5xl md:text-6xl font-bold text-white mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             About <span className="text-gold-gradient">Tamaasha</span>
