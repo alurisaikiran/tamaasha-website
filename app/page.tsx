@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import MarqueeTicker from "@/components/MarqueeTicker";
-import CinematicSection from "@/components/CinematicSection";
 import MenuSection from "@/components/MenuSection";
 import EventsSection from "@/components/EventsSection";
 import VideoSection from "@/components/VideoSection";
@@ -18,7 +17,6 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <MarqueeTicker />
-      <CinematicSection />
       <MenuSection />
       <EventsSection />
       <VideoSection />

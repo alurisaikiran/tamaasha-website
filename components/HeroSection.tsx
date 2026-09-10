@@ -1,8 +1,8 @@
 "use client";
 
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown, MapPin, Clock } from "lucide-react";
-import Image from "next/image";
 
 const PARTICLES = [
   { x: 8,  y: 15, s: 2,   dur: 7,  del: 0   },
@@ -20,20 +20,27 @@ const PARTICLES = [
 ];
 
 export default function HeroSection() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
-      {/* Background photo */}
+      {/* Background video */}
       <div className="absolute inset-0">
-        <Image
-          src="/images/hero-bg.jpg"
-          alt="Tamaasha Lounge interior"
-          fill priority
-          className="object-cover object-center scale-105"
-          sizes="100vw"
-        />
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          onCanPlay={() => { if (videoRef.current) videoRef.current.playbackRate = 0.4; }}
+          className="absolute inset-0 w-full h-full object-cover object-center sm:scale-105"
+        >
+          <source src="/videos/drink-pour.mp4" type="video/mp4" />
+        </video>
         {/* Layered overlays for depth */}
-        <div className="absolute inset-0 bg-black/65" />
+        <div className="absolute inset-0 bg-black/60" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/10" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
         {/* Gold radial glow */}
@@ -70,32 +77,20 @@ export default function HeroSection() {
       {/* ── Main content ── */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto w-full">
 
-        {/* Open badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-          className="inline-flex items-center gap-2.5 mb-10 px-5 py-2.5 rounded-full border border-[#c9a84c]/25 bg-[#c9a84c]/8 backdrop-blur-sm"
-        >
-          <span className="w-2 h-2 rounded-full bg-[#c9a84c] animate-pulse" />
-          <span className="text-[11px] tracking-[0.45em] uppercase text-[#c9a84c] font-medium">
-            Tucker&apos;s Premier Lounge &amp; Bar
-          </span>
-          <span className="w-2 h-2 rounded-full bg-[#c9a84c] animate-pulse" />
-        </motion.div>
+
 
         {/* Main heading */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="font-bold leading-[0.9] tracking-tight mb-6"
+          className="font-bold leading-tight tracking-tight mb-6"
           style={{ fontFamily: "var(--font-playfair)" }}
         >
-          <span className="block text-white text-5xl md:text-7xl lg:text-8xl mb-2 drop-shadow-2xl">
+          <span className="block text-white text-5xl md:text-7xl lg:text-8xl mb-3 drop-shadow-2xl">
             Where the
           </span>
-          <span className="block shimmer text-6xl md:text-8xl lg:text-[7rem]">
+          <span className="block shimmer text-5xl md:text-7xl lg:text-[6rem]">
             Night Begins
           </span>
         </motion.h1>
@@ -181,8 +176,9 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.65, duration: 0.7 }}
-          className="inline-flex items-center gap-0 rounded-2xl overflow-hidden border border-[#c9a84c]/15 backdrop-blur-md"
+          className="w-full max-w-sm sm:max-w-none sm:w-auto overflow-x-auto"
         >
+          <div className="inline-flex items-center gap-0 rounded-2xl overflow-hidden border border-[#c9a84c]/15 backdrop-blur-md min-w-max mx-auto">
           {[
             { val: "4.9★", label: "Google Rating" },
             { val: "200+", label: "Reviews" },
@@ -190,7 +186,7 @@ export default function HeroSection() {
             { val: "5+",   label: "Years Open" },
           ].map((s, i, arr) => (
             <div key={s.label} className="flex items-center">
-              <div className="px-7 py-4 text-center bg-black/30">
+              <div className="px-5 sm:px-7 py-4 text-center bg-black/30">
                 <div
                   className="text-2xl font-bold text-gold-gradient mb-0.5"
                   style={{ fontFamily: "var(--font-playfair)" }}
@@ -204,6 +200,7 @@ export default function HeroSection() {
               )}
             </div>
           ))}
+          </div>
         </motion.div>
       </div>
 

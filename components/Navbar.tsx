@@ -63,10 +63,10 @@ export default function Navbar() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
           scrolled
-            ? "nav-blur bg-black/80 border-b border-[#c9a84c]/20 py-3"
-            : "bg-transparent py-5"
+            ? "nav-blur bg-black/90 border-b border-[#c9a84c]/20 py-3"
+            : "bg-black/70 backdrop-blur-sm lg:bg-transparent lg:backdrop-blur-none py-5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -81,7 +81,7 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col leading-tight">
               <span
-                className="text-xl font-bold shimmer tracking-widest"
+                className="text-lg sm:text-xl font-bold shimmer tracking-wide sm:tracking-widest"
                 style={{ fontFamily: "var(--font-playfair)" }}
               >
                 TAMAASHA
@@ -143,7 +143,7 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="fixed inset-0 z-40 bg-black/95 nav-blur flex flex-col justify-center items-center gap-8 lg:hidden"
+            className="fixed inset-0 z-[99] bg-black/95 nav-blur flex flex-col justify-center items-center gap-8 lg:hidden"
           >
             {navLinks.map((link, i) => (
               <motion.button

@@ -82,10 +82,34 @@ export default function CinematicSection() {
     rawY.set(0.5);
   }, [rawX, rawY]);
 
+  // Auto-play when section scrolls into view
   useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            videoRef.current?.play()
+              .then(() => { setIsPlaying(true); setIsIdle(false); setHasInteracted(true); })
+              .catch(() => {});
+          } else {
+            videoRef.current?.pause();
+            setIsPlaying(false);
+            setIsIdle(true);
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    observer.observe(section);
+
     const onScroll = () => triggerActivity();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
+      observer.disconnect();
       window.removeEventListener("scroll", onScroll);
       clearTimeout(idleTimer.current);
     };
@@ -113,7 +137,7 @@ export default function CinematicSection() {
       >
         <video
           ref={videoRef}
-          src="/videos/bar-atmosphere.mp4"
+          src="/videos/drink-pour.mp4"
           loop
           muted={isMuted}
           playsInline

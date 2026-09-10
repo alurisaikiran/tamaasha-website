@@ -147,3 +147,12 @@ body {
   writing-mode: vertical-rl;
   text-orientation: mixed;
 }
+
+/* Hide scrollbar but keep scrollability */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

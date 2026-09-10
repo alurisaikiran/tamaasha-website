@@ -156,14 +156,14 @@ export default function MenuSection() {
         </AnimatePresence>
 
         {/* Category tabs */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
+        <div className="flex overflow-x-auto gap-3 mb-10 pb-1 justify-start sm:justify-center scrollbar-hide -mx-6 px-6 sm:mx-0 sm:px-0 sm:flex-wrap">
           {categories.map((cat) => (
             <motion.button
               key={cat.id}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               onClick={() => setActive(cat.id)}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm tracking-wider transition-all duration-300 ${
+              className={`flex-shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-full text-sm tracking-wider transition-all duration-300 ${
                 active === cat.id
                   ? "bg-[#c9a84c] text-black font-semibold shadow-lg shadow-[#c9a84c]/20"
                   : "glass-card text-white/60 hover:text-white hover:border-[#c9a84c]/30"
