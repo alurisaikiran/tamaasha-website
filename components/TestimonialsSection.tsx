@@ -50,7 +50,7 @@ const reviews = [
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-24 px-6 relative bg-[#0a0a0a]">
+    <section id="testimonials" className="py-16 sm:py-24 px-6 relative bg-[#0a0a0a]">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-[#c9a84c]/20 to-transparent" />
 
       <div className="max-w-6xl mx-auto">
@@ -60,13 +60,13 @@ export default function TestimonialsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <p className="text-xs tracking-[0.4em] uppercase text-[#c9a84c] mb-4 flex items-center justify-center gap-2">
             <Sparkles size={12} /> Guest Reviews <Sparkles size={12} />
           </p>
           <h2
-            className="text-5xl md:text-6xl font-bold text-white mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             What They&apos;re <span className="text-gold-gradient">Saying</span>

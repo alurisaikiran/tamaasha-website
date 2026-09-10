@@ -101,7 +101,7 @@ export default function MenuSection() {
   const activeCat = categories.find((c) => c.id === active)!;
 
   return (
-    <section id="menu" className="py-24 px-6 relative">
+    <section id="menu" className="py-16 sm:py-24 px-6 relative">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-[#c9a84c]/30 to-transparent" />
 
       <div className="max-w-6xl mx-auto">
@@ -111,7 +111,7 @@ export default function MenuSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
         >
           <p className="text-xs tracking-[0.4em] uppercase text-[#c9a84c] mb-4 flex items-center justify-center gap-2">
             <Sparkles size={12} /> Curated Selection <Sparkles size={12} />

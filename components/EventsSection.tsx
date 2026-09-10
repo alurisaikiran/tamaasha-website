@@ -93,7 +93,7 @@ function Countdown({ targetDate }: { targetDate: string }) {
 
 export default function EventsSection() {
   return (
-    <section id="events" className="py-24 px-6 relative bg-[#0a0a0a]">
+    <section id="events" className="py-16 sm:py-24 px-6 relative bg-[#0a0a0a]">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-[#c9a84c]/20 to-transparent" />
 
       <div className="max-w-6xl mx-auto">
@@ -103,13 +103,13 @@ export default function EventsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <p className="text-xs tracking-[0.4em] uppercase text-[#c9a84c] mb-4 flex items-center justify-center gap-2">
             <Sparkles size={12} /> Live & Upcoming <Sparkles size={12} />
           </p>
           <h2
-            className="text-5xl md:text-6xl font-bold text-white mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             Events & <span className="text-gold-gradient">Entertainment</span>
@@ -216,19 +216,19 @@ export default function EventsSection() {
           className="mt-12 glass-card rounded-2xl p-6"
         >
           <h3 className="text-center text-sm tracking-[0.3em] uppercase text-[#c9a84c] mb-6">Weekly Schedule</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-3">
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide -mx-6 px-6 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-7">
             {[
               { day: "Sun", note: "Chill Vibes" },
-              { day: "Mon", note: "Lounge Night" },
-              { day: "Tue", note: "Lounge Night" },
-              { day: "Wed", note: "Mid-Week Mix" },
-              { day: "Thu", note: "Hookah Thurs", highlight: true },
-              { day: "Fri", note: "Bollywood Nights", highlight: true },
-              { day: "Sat", note: "R&B Saturday", highlight: true },
+              { day: "Mon", note: "Lounge" },
+              { day: "Tue", note: "Lounge" },
+              { day: "Wed", note: "Mid-Week" },
+              { day: "Thu", note: "Hookah", highlight: true },
+              { day: "Fri", note: "Bollywood", highlight: true },
+              { day: "Sat", note: "R&B", highlight: true },
             ].map((d) => (
               <div
                 key={d.day}
-                className={`rounded-xl p-3 text-center ${
+                className={`flex-shrink-0 rounded-xl p-3 text-center w-[80px] sm:w-auto ${
                   d.highlight ? "bg-[#c9a84c]/10 border border-[#c9a84c]/20" : "bg-white/3"
                 }`}
               >

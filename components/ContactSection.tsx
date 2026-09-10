@@ -58,7 +58,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 relative bg-[#111111]">
+    <section id="contact" className="py-16 sm:py-24 px-6 relative bg-[#111111]">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-[#c9a84c]/20 to-transparent" />
 
       <div className="max-w-6xl mx-auto">
@@ -68,13 +68,13 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <p className="text-xs tracking-[0.4em] uppercase text-[#c9a84c] mb-4 flex items-center justify-center gap-2">
             <Sparkles size={12} /> Get in Touch <Sparkles size={12} />
           </p>
           <h2
-            className="text-5xl md:text-6xl font-bold text-white mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             Reserve Your <span className="text-gold-gradient">Table</span>
@@ -170,7 +170,7 @@ export default function ContactSection() {
                 </button>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-8 space-y-5">
+              <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-5 sm:p-8 space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="text-xs text-white/40 uppercase tracking-wider block mb-2">Full Name *</label>
