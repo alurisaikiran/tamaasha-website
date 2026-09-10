@@ -27,6 +27,20 @@ export default function HeroSection() {
 
       {/* Background video */}
       <div className="absolute inset-0">
+        {/* Mobile video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          onCanPlay={(e) => { (e.target as HTMLVideoElement).playbackRate = 0.6; }}
+          className="sm:hidden absolute inset-0 w-full h-full object-cover object-center"
+        >
+          <source src="/videos/mobile-hero.mp4" type="video/mp4" />
+        </video>
+
+        {/* Desktop video */}
         <video
           ref={videoRef}
           autoPlay
@@ -35,7 +49,7 @@ export default function HeroSection() {
           playsInline
           preload="auto"
           onCanPlay={() => { if (videoRef.current) videoRef.current.playbackRate = 0.4; }}
-          className="absolute inset-0 w-full h-full object-cover object-top sm:object-center sm:scale-105"
+          className="hidden sm:block absolute inset-0 w-full h-full object-cover object-center scale-105"
         >
           <source src="/videos/drink-pour.mp4" type="video/mp4" />
         </video>
