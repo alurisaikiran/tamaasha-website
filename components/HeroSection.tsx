@@ -35,18 +35,18 @@ export default function HeroSection() {
           playsInline
           preload="auto"
           onCanPlay={() => { if (videoRef.current) videoRef.current.playbackRate = 0.4; }}
-          className="absolute inset-0 w-full h-full object-cover object-center sm:scale-105"
+          className="absolute inset-0 w-full h-full object-cover object-top sm:object-center sm:scale-105"
         >
           <source src="/videos/drink-pour.mp4" type="video/mp4" />
         </video>
-        {/* Layered overlays for depth */}
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
+        {/* Layered overlays — lighter on mobile so video is visible */}
+        <div className="absolute inset-0 bg-black/25 sm:bg-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+        <div className="absolute inset-0 hidden sm:block bg-gradient-to-r from-black/40 via-transparent to-black/40" />
         {/* Gold radial glow */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_55%,rgba(201,168,76,0.08)_0%,transparent_100%)]" />
-        {/* Vignette */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_40%,rgba(0,0,0,0.6)_100%)]" />
+        {/* Vignette — softer on mobile */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_50%,rgba(0,0,0,0.35)_100%)] sm:bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_40%,rgba(0,0,0,0.6)_100%)]" />
       </div>
 
       {/* Gold particles */}
