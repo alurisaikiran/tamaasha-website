@@ -93,14 +93,14 @@ export default function AboutSection() {
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,168,76,0.06)_0%,_transparent_70%)]" />
 
               {/* Emblem watermark bottom-left */}
-              <div className="absolute bottom-5 left-5 flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full border border-[#c9a84c]/60 flex items-center justify-center bg-black/40 backdrop-blur-sm">
-                  <span className="text-[#c9a84c] font-bold text-sm" style={{ fontFamily: "var(--font-playfair)" }}>T</span>
-                </div>
-                <div className="flex flex-col leading-none">
-                  <span className="text-[#c9a84c] text-xs font-semibold tracking-widest" style={{ fontFamily: "var(--font-playfair)" }}>TAMAASHA</span>
-                  <span className="text-[#c9a84c]/50 text-[9px] tracking-widest uppercase">Tucker, GA</span>
-                </div>
+              <div className="absolute bottom-4 left-4">
+                <Image
+                  src="/images/logo.png"
+                  alt="Tamaasha"
+                  width={80}
+                  height={80}
+                  className="w-20 h-20 object-contain mix-blend-screen opacity-80"
+                />
               </div>
             </div>
 

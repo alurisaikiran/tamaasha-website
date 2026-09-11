@@ -89,7 +89,7 @@ export default function HeroSection() {
       </div>
 
       {/* ── Main content ── */}
-      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto w-full">
+      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto w-full pt-8 pb-16 sm:py-0">
 
 
 

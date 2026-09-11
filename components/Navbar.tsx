@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Home",    href: "#home"    },
@@ -73,23 +74,16 @@ export default function Navbar() {
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.03 }}
-            className="cursor-pointer flex items-center gap-3"
+            className="cursor-pointer flex items-center gap-2"
             onClick={() => handleNav("#home")}
           >
-            <div className="w-9 h-9 rounded-full border border-[#c9a84c]/50 flex items-center justify-center bg-[#c9a84c]/5 flex-shrink-0">
-              <span className="text-[#c9a84c] font-bold text-base" style={{ fontFamily: "var(--font-playfair)" }}>T</span>
-            </div>
-            <div className="flex flex-col leading-tight">
-              <span
-                className="text-lg sm:text-xl font-bold shimmer tracking-wide sm:tracking-widest"
-                style={{ fontFamily: "var(--font-playfair)" }}
-              >
-                TAMAASHA
-              </span>
-              <span className="text-[9px] tracking-[0.45em] text-[#c9a84c]/55 uppercase">
-                Lounge &amp; Bar
-              </span>
-            </div>
+            <Image
+              src="/images/logo.png"
+              alt="Tamaasha Lounge & Bar"
+              width={96}
+              height={96}
+              className="w-20 h-20 sm:w-24 sm:h-24 object-contain flex-shrink-0 mix-blend-screen"
+            />
           </motion.div>
 
           {/* Desktop Links */}

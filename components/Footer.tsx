@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FaFacebook, FaInstagram, FaGoogle } from "react-icons/fa";
+import Image from "next/image";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -13,15 +14,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="mb-4">
-              <div
-                className="text-3xl font-bold shimmer"
-                style={{ fontFamily: "var(--font-playfair)" }}
-              >
-                TAMAASHA
-              </div>
-              <div className="text-[10px] tracking-[0.4em] text-[#c9a84c]/50 uppercase mt-1">
-                Lounge &amp; Bar
-              </div>
+              <Image
+                src="/images/logo.png"
+                alt="Tamaasha Lounge & Bar"
+                width={128}
+                height={128}
+                className="w-32 h-32 object-contain mix-blend-screen"
+              />
             </div>
             <p className="text-white/40 text-sm leading-relaxed max-w-xs mb-6">
               Tucker&apos;s premier lounge experience — where every night becomes a spectacle worth remembering.
@@ -109,20 +108,22 @@ export default function Footer() {
         </div>
 
         {/* Newsletter */}
-        <div className="glass-card rounded-2xl p-6 mb-12 flex flex-col sm:flex-row items-center gap-4 justify-between">
-          <div>
-            <h4 className="text-white font-medium mb-1">Get Weekly Event Updates</h4>
-            <p className="text-white/40 text-sm">Never miss a themed night or special offer.</p>
-          </div>
-          <div className="flex gap-2 w-full sm:w-auto">
-            <input
-              type="email"
-              placeholder="your@email.com"
-              className="flex-1 sm:w-52 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white placeholder-white/20 focus:outline-none focus:border-[#c9a84c]/50 text-sm"
-            />
-            <button className="bg-[#c9a84c] text-black px-5 py-2.5 rounded-xl font-medium text-sm hover:bg-[#e8c97a] transition-all whitespace-nowrap">
-              Subscribe
-            </button>
+        <div className="glass-card rounded-2xl p-5 sm:p-6 mb-12">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <h4 className="text-white font-medium mb-1">Get Weekly Event Updates</h4>
+              <p className="text-white/40 text-sm">Never miss a themed night or special offer.</p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-2 sm:items-center">
+              <input
+                type="email"
+                placeholder="your@email.com"
+                className="w-full sm:w-52 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white placeholder-white/20 focus:outline-none focus:border-[#c9a84c]/50 text-sm"
+              />
+              <button className="w-full sm:w-auto bg-[#c9a84c] text-black px-5 py-2.5 rounded-xl font-medium text-sm hover:bg-[#e8c97a] transition-all">
+                Subscribe
+              </button>
+            </div>
           </div>
         </div>
 
